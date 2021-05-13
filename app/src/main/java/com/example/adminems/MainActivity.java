@@ -10,22 +10,29 @@ import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MaterialCardView uploadNotice;
+    MaterialCardView uploadNotice, addGalleryImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         uploadNotice = findViewById(R.id.add_notification);
+        addGalleryImage = findViewById(R.id.add_image);
 
         uploadNotice.setOnClickListener(this);
+        addGalleryImage.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.add_notification:
-                Intent intent = new Intent(MainActivity.this, UploadNotice.class);
+                intent = new Intent(MainActivity.this, UploadNotice.class);
+                startActivity(intent);
+                break;
+            case R.id.add_image:
+                intent = new Intent(MainActivity.this, UploadImage.class);
                 startActivity(intent);
                 break;
         }
