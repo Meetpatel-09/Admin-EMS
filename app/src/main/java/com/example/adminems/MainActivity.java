@@ -10,7 +10,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    MaterialCardView uploadNotice, addGalleryImage;
+    MaterialCardView uploadNotice, addGalleryImage, add_ebook;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,9 +18,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         uploadNotice = findViewById(R.id.add_notification);
         addGalleryImage = findViewById(R.id.add_image);
+        add_ebook = findViewById(R.id.add_ebook);
 
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);
+        add_ebook.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.add_image:
                 intent = new Intent(MainActivity.this, UploadImage.class);
+                startActivity(intent);
+                break;
+            case R.id.add_ebook:
+                intent = new Intent(MainActivity.this, UploadPdf.class);
                 startActivity(intent);
                 break;
         }
