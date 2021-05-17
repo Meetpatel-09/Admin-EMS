@@ -66,10 +66,10 @@ public class AddFaculty extends AppCompatActivity {
         addTeacherButton = findViewById(R.id.add_teacher_button);
         pd = new ProgressDialog(this);
 
-        reference = FirebaseDatabase.getInstance().getReference();
+        reference = FirebaseDatabase.getInstance().getReference().child("Faculty");
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        String [] items = new String[]{"Select Department", "Computer", "Mechanical", "Electrical", "Civil"};
+        String [] items = new String[]{"Select Department", "Civil", "Computer", "Mechanical"};
         addTeacherCategory.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items));
         addTeacherCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
