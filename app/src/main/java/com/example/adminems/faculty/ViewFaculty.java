@@ -77,7 +77,7 @@ public class ViewFaculty extends AppCompatActivity {
                     }
                     cDepartment.setHasFixedSize(true);
                     cDepartment.setLayoutManager(new LinearLayoutManager(ViewFaculty.this));
-                    adapter = new FacultyAdapter(list2, ViewFaculty.this);
+                    adapter = new FacultyAdapter(list2, ViewFaculty.this, "Civil");
                     cDepartment.setAdapter(adapter);
                     cNoData.setVisibility(View.GONE);
                     cDepartment.setVisibility(View.VISIBLE);
@@ -107,7 +107,7 @@ public class ViewFaculty extends AppCompatActivity {
                     }
                     csDepartment.setHasFixedSize(true);
                     csDepartment.setLayoutManager(new LinearLayoutManager(ViewFaculty.this));
-                    adapter = new FacultyAdapter(list1, ViewFaculty.this);
+                    adapter = new FacultyAdapter(list1, ViewFaculty.this, "Computer");
                     csDepartment.setAdapter(adapter);
                     csNoData.setVisibility(View.GONE);
                     csDepartment.setVisibility(View.VISIBLE);
@@ -137,7 +137,7 @@ public class ViewFaculty extends AppCompatActivity {
                     }
                     mDepartment.setHasFixedSize(true);
                     mDepartment.setLayoutManager(new LinearLayoutManager(ViewFaculty.this));
-                    adapter = new FacultyAdapter(list3, ViewFaculty.this);
+                    adapter = new FacultyAdapter(list3, ViewFaculty.this, "Mechanical");
                     mDepartment.setAdapter(adapter);
                     mNoData.setVisibility(View.GONE);
                     mDepartment.setVisibility(View.VISIBLE);

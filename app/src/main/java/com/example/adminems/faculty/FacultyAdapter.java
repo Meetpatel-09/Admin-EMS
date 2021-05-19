@@ -24,10 +24,13 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
 
     private List<FacultyData> list;
     private Context context;
+    private String category;
 
-    public FacultyAdapter(List<FacultyData> list, Context context) {
+    public FacultyAdapter(List<FacultyData> list, Context context, String category) {
         this.list = list;
         this.context = context;
+        this.category = category;
+
     }
 
     @NonNull
@@ -54,6 +57,13 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, UpdateFaculty.class);
+                intent.putExtra("name", data.getName());
+                intent.putExtra("email", data.getEmail());
+                intent.putExtra("post", data.getPost());
+                intent.putExtra("image", data.getImage());
+                intent.putExtra("key", data.getKey());
+                intent.putExtra("category", category);
+                context.startActivity(intent);
             }
         });
     }
@@ -76,7 +86,7 @@ public class FacultyAdapter extends RecyclerView.Adapter<FacultyAdapter.FacultyV
             post = itemView.findViewById(R.id.faculty_post);
             email = itemView.findViewById(R.id.faculty_email);
             update = itemView.findViewById(R.id.faculty_update);
-            itemView = itemView.findViewById(R.id.faculty_image);
+            image = itemView.findViewById(R.id.faculty_image);
         }
     }
 }
