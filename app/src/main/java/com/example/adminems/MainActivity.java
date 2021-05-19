@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.adminems.faculty.UpdateFaculty;
+import com.example.adminems.faculty.ViewFaculty;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.add_faculty:
-                intent = new Intent(MainActivity.this, UpdateFaculty.class);
+                intent = new Intent(MainActivity.this, ViewFaculty.class);
                 startActivity(intent);
                 break;
         }

@@ -1,144 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".faculty.UpdateFaculty">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Widget.Design.FloatingActionButton"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_add"
-        android:elevation="3dp"
-        app:fabSize="normal"
-        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/update_teacher_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/a"
+        android:layout_marginTop="36dp"/>
 
-    <androidx.core.widget.NestedScrollView
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_teacher_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="text"
+            android:layout_marginTop="16dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Civil Engineering"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@color/text_color"
-                style="Bold"
-                android:layout_marginTop="16dp"
-                />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_teacher_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#c1c1c1"
-                android:layout_marginVertical="8dp"
-                />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_teacher_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Post"
+            android:inputType="text"
+            android:layout_marginTop="16dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/c_department"
-                android:nestedScrollingEnabled="false"
-                android:visibility="gone"
-                />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/c_no_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/update_teacher_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update"
+            android:layout_marginRight="8dp"
+            android:textAllCaps="false"/>
 
-                <include layout="@layout/no_data_found"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete_teacher_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:layout_marginLeft="8dp"
+            android:textAllCaps="false"/>
 
-            </LinearLayout>
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Computer Engineering"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@color/text_color"
-                style="Bold"
-                android:layout_marginTop="16dp"
-                />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#c1c1c1"
-                android:layout_marginVertical="8dp"
-                />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cs_department"
-                android:nestedScrollingEnabled="false"
-                android:visibility="gone"
-                />
-
-            <LinearLayout
-                android:id="@+id/cs_no_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include layout="@layout/no_data_found"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mechanical Engineering"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@color/text_color"
-                style="Bold"
-                android:layout_marginTop="16dp"
-                />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#c1c1c1"
-                android:layout_marginVertical="8dp"
-                />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/m_department"
-                android:nestedScrollingEnabled="false"
-                android:visibility="gone"
-                />
-
-            <LinearLayout
-                android:id="@+id/m_no_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include layout="@layout/no_data_found"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
