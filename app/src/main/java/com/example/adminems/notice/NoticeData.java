@@ -4,6 +4,9 @@ public class NoticeData {
 
     String title, image, date, time, key;
 
+    public NoticeData() {
+    }
+
     public NoticeData(String title, String image, String date, String time, String key) {
         this.title = title;
         this.image = image;
