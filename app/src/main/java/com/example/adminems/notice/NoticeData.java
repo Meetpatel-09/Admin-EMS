@@ -1,4 +1,4 @@
-package com.example.adminems;
+package com.example.adminems.notice;
 
 public class NoticeData {
 
