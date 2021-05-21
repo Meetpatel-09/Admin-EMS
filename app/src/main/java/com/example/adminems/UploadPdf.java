@@ -106,6 +106,7 @@ public class UploadPdf extends AppCompatActivity {
             public void onFailure(@NonNull @NotNull Exception e) {
                 pd.dismiss();
                 Toast.makeText(UploadPdf.this, "Something went wrong!!!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadPdf.this, MainActivity.class));
             }
         });
     }
@@ -117,18 +118,20 @@ public class UploadPdf extends AppCompatActivity {
         hashMap.put("pdfTitle", title);
         hashMap.put("pdfUrl", downloadUrl);
 
-        reference.  child("pdf").child(uniqueKey).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        reference.child("pdf").child(uniqueKey).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
                 pd.dismiss();
                 Toast.makeText(UploadPdf.this, "PDF uploaded successfully", Toast.LENGTH_SHORT).show();
                 pdfTitle.setText("");
+                startActivity(new Intent(UploadPdf.this, MainActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull @NotNull Exception e) {
                 pd.dismiss();
                 Toast.makeText(UploadPdf.this, "Failed to upload pdf", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadPdf.this, MainActivity.class));
             }
         });
     }

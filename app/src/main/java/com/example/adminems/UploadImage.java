@@ -126,6 +126,7 @@ public class UploadImage extends AppCompatActivity {
                 } else {
                     pd.dismiss();
                     Toast.makeText(UploadImage.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(UploadImage.this, MainActivity.class));
                 }
             }
         });
@@ -140,12 +141,14 @@ public class UploadImage extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 pd.dismiss();
                 Toast.makeText(UploadImage.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadImage.this, MainActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull @org.jetbrains.annotations.NotNull Exception e) {
                 pd.dismiss();
                 Toast.makeText(UploadImage.this, "Something went wrong!!!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadImage.this, MainActivity.class));
             }
         });
     }

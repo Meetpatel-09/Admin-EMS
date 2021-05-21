@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.adminems.MainActivity;
 import com.example.adminems.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -115,6 +116,7 @@ public class UploadNotice extends AppCompatActivity {
                 } else {
                     pd.dismiss();
                     Toast.makeText(UploadNotice.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(UploadNotice.this, MainActivity.class));
                 }
             }
         });
@@ -140,12 +142,14 @@ public class UploadNotice extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 pd.dismiss();
                 Toast.makeText(UploadNotice.this, "Notice Uploaded", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadNotice.this, MainActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull @NotNull Exception e) {
                 pd.dismiss();
                 Toast.makeText(UploadNotice.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(UploadNotice.this, MainActivity.class));
             }
         });
     }

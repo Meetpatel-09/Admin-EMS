@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.adminems.MainActivity;
 import com.example.adminems.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -147,6 +148,7 @@ public class AddFaculty extends AppCompatActivity {
                 } else {
                     pd.dismiss();
                     Toast.makeText(AddFaculty.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AddFaculty.this, MainActivity.class));
                 }
             }
         });
@@ -162,12 +164,14 @@ public class AddFaculty extends AppCompatActivity {
             public void onSuccess(Void unused) {
                 pd.dismiss();
                 Toast.makeText(AddFaculty.this, "Faculty Added", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(AddFaculty.this, MainActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull @NotNull Exception e) {
                 pd.dismiss();
                 Toast.makeText(AddFaculty.this, "Something went wrong!!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(AddFaculty.this, MainActivity.class));
             }
         });
     }
