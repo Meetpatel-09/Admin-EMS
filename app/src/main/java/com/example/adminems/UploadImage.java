@@ -63,7 +63,7 @@ public class UploadImage extends AppCompatActivity {
         galleryImageView = findViewById(R.id.gallery_image);
         pd = new ProgressDialog(this);
 
-        String [] items = new String[]{"Select Category", "Annual Function", "Project Fair", "Independence Day", "Other Events"};
+        String [] items = new String[]{"Select Category", "Annual Function", "Independence Day", "Project Fair", "Other Events"};
         imageCategory.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items));
         imageCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
