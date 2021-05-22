@@ -9,7 +9,16 @@
         android:roundIcon="@drawable/c"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdminEMS">
-        <activity android:name=".notice.DeleteNoticeActivity"></activity>
+        <activity android:name=".LoginActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".notice.DeleteNoticeActivity" />
         <activity android:name=".faculty.UpdateFaculty" />
         <activity android:name=".faculty.AddFaculty" />
         <activity android:name=".faculty.ViewFaculty" />
@@ -17,11 +26,7 @@
         <activity android:name=".UploadImage" />
         <activity android:name=".notice.UploadNotice" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
